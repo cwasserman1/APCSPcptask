@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class pMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Rigidbody rb;
     void Start()
     {
-        
+        rb.useGravity = false;
     }
 
     // Update is called once per frame

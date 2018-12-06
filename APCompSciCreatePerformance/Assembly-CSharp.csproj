@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\followPlayer.cs" />
+    <Compile Include="Assets\Scripts\levelManager.cs" />
     <Compile Include="Assets\Scripts\pMovement.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/colewasserman/Desktop/CreatePerformanceTask/APCSPcptask/APCompSciCreatePerformance/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

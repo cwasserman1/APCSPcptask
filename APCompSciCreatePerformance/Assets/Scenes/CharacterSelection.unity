@@ -352,6 +352,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694696806}
   m_CullTransparentMesh: 0
+--- !u!1001 &1013615979
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2522193211399485936, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 365.7217
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 207.07338
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.0726042
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485938, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522193211399485939, guid: e829bf4306f684fb792589b9229a0a12,
+        type: 3}
+      propertyPath: Trump
+      value: 
+      objectReference: {fileID: 4284851392279440286, guid: c841f1e419cfc49fcac4650c8353735c,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e829bf4306f684fb792589b9229a0a12, type: 3}
+--- !u!114 &1245978041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2522193211399485939, guid: e829bf4306f684fb792589b9229a0a12,
+    type: 3}
+  m_PrefabInstance: {fileID: 1013615979}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb93ba46a8aeb402db0a613ee84f819a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1314329982
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +452,7 @@ GameObject:
   - component: {fileID: 1314329985}
   - component: {fileID: 1314329984}
   m_Layer: 5
-  m_Name: donaldButton
+  m_Name: HillaryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +517,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1314329985}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1245978041}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BattleScreen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1245978041}
+        m_MethodName: LoadHillary
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1314329985
@@ -613,7 +722,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824459949
 GameObject:
@@ -628,7 +737,7 @@ GameObject:
   - component: {fileID: 1824459952}
   - component: {fileID: 1824459951}
   m_Layer: 5
-  m_Name: hillaryButton
+  m_Name: DonaldButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,7 +802,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1824459952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1245978041}
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BattleScreen
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1245978041}
+        m_MethodName: LoadTrump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1824459952

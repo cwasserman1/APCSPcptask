@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 public class levelManager : MonoBehaviour
 {
 
-    public GameObject Trump;
-    public GameObject Hillary;
+    public GameObject Male;
+    public GameObject Female;
    public void LoadScene(string sceneName){
         SceneManager.LoadScene(sceneName);
     }
     public void Quitapp(){
         Application.Quit();
     }
-    public void LoadTrump(){
+    public void InstantiatePlayers(){
 
-        Instantiate(Trump, new Vector3(0, 0, 0), Quaternion.identity);
-        Object.DontDestroyOnLoad(Trump);
+        Instantiate(Male, new Vector2(0, 0), Quaternion.identity);
+        Instantiate(Female, new Vector2(0, 0), Quaternion.identity);
+       Object.DontDestroyOnLoad(Female);
+        Object.DontDestroyOnLoad(Male);
     }
-    public void LoadHillary(){
-      
-    }
+   
     
 }

@@ -18,6 +18,10 @@ public class pMovement : MonoBehaviour
    
     void FixedUpdate()
     {
+
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
         currentscene = SceneManager.GetActiveScene();
         if (currentscene.name == "BattleScreen")
         {
@@ -30,9 +34,7 @@ public class pMovement : MonoBehaviour
     void playerMovement()
     {
         
-        Vector3 mousePos = Input.mousePosition;
-        float XmousePos = Input.mousePosition.x;
-        float YmousePos = Input.mousePosition.y;
+      //  Vector3 restrictX==transform.position.x(tram  -4f,)
         currentscene.ToString();
        
             if (Input.GetKey(KeyCode.W))

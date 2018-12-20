@@ -23,6 +23,9 @@ public class p2Movement : MonoBehaviour
     
     void FixedUpdate()
     {
+        Vector3 pos = transform.position;
+        pos.z = 0;
+        transform.position = pos;
         currentscene = SceneManager.GetActiveScene();
         if (currentscene.name == "BattleScreen")
         {
@@ -34,17 +37,22 @@ public class p2Movement : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (Input.GetKey(KeyCode.L)){
-
+        Debug.Log("collision detected on player 2");
+        if(Input.GetKey(KeyCode.L)){
+            if (collision.gameObject.tag == "player1")
+            {
+                Debug.Log("HIT");
+            }
         }
     }
     void playerMovement()
     {
-
-        Vector2 mousePos  = Input.mousePosition;
-        float XmousePos = Input.mousePosition.x;
-        float YmousePos = Input.mousePosition.y;
-        currentscene.ToString();
+        // Vector2 position = transform.position;
+      //  Vector3 restrictX = transform.position.x(transform.position.x, -4f, 4f);
+      
+       // Vector3 
+     //   Vector2 mousePos = Input.mousePosition;
+   
        
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -67,4 +75,5 @@ public class p2Movement : MonoBehaviour
 
 
     }
+
 }

@@ -33,12 +33,13 @@ public class p2Movement : MonoBehaviour
 
 
         }
+        float restrictX = Mathf.Clamp(pos.x, -8.21f, 8.35f);
 
     }
     public void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collision detected on player 2");
-        if(Input.GetKey(KeyCode.L)){
+        if(Input.GetKeyUp(KeyCode.L)){
             if (collision.gameObject.tag == "player1")
             {
                 Debug.Log("HIT");
@@ -47,11 +48,6 @@ public class p2Movement : MonoBehaviour
     }
     void playerMovement()
     {
-        // Vector2 position = transform.position;
-      //  Vector3 restrictX = transform.position.x(transform.position.x, -4f, 4f);
-      
-       // Vector3 
-     //   Vector2 mousePos = Input.mousePosition;
    
        
         if (Input.GetKey(KeyCode.UpArrow))

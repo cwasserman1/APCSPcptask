@@ -8,18 +8,12 @@ public class levelManager : MonoBehaviour
     public GameObject Male;
     public GameObject Female;
    public void LoadScene(string sceneName){
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);//Loads Scene of "sceneName"
     }
     public void Quitapp(){
-        Application.Quit();
+        Application.Quit();//Quits the Game
     }
-    public void InstantiatePlayers(){
 
-        Instantiate(Male, new Vector2(0, 0), Quaternion.identity);
-        Instantiate(Female, new Vector2(0, 0), Quaternion.identity);
-       Object.DontDestroyOnLoad(Female);
-        Object.DontDestroyOnLoad(Male);
-    }
    
     
 }

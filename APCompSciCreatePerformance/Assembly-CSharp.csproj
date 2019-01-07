@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\levelManager.cs" />
     <Compile Include="Assets\Scripts\p2Movement.cs" />
     <Compile Include="Assets\Scripts\pMovement.cs" />
+    <Compile Include="Assets\Scripts\SpawnRandom.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Unity Projects/APCSPcptask/APCompSciCreatePerformance/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

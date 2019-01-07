@@ -10,15 +10,18 @@ public class pMovement : MonoBehaviour
     public float XMax;
     public float YMin;
     public float YMax;
+    
     public Rigidbody rb;
     public float speed;
     public int p2Health;
     public Text text;
     public Scene currentscene;
+    
+    private p2Movement script;
     void Start()//Initiates the Vairables...Only runs at the Start of the Game
     {
         
-        p2Health = 10;                      //Makes Player 1's Health 10
+        p2Health = 5;                      //Makes Player 1's Health 10
         rb.useGravity = false;     //disables Gravity on the RigidBody
         rb.drag = 1;        //Sets Drag to 1
         rb.isKinematic = false; //Disables kinematic movement
@@ -37,6 +40,7 @@ public class pMovement : MonoBehaviour
         pos.z = 0;
         transform.position = pos;
         currentscene = SceneManager.GetActiveScene();
+
         if (currentscene.name == "BattleScreen")      
         {
             playerMovement();
@@ -45,8 +49,32 @@ public class pMovement : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject femalePlayer = GameObject.Find("femalePlayer");
+        p2Movement script = femalePlayer.GetComponent<p2Movement>();
+        
+
+        if (other.gameObject.tag == "lightMed") {
+
+            script.p1Health++;
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "heavyMed")
+        {
+            script.p1Health = script.p1Health + 2;
+            Destroy(other.gameObject);
+        }
+        
+        
+    }
     public void OnCollisionEnter(Collision collision)   //Checks for Collision
     {
+        if (collision.gameObject.tag == "lightMed")
+        {
+            Debug.Log("Med REFILL");
+            Destroy(collision.gameObject);
+        }
         Debug.Log("collision detected on player 2");
         if (Input.GetKey(KeyCode.G))                        //Allows player to hit and modifies the opposing Player's Health
         {
@@ -55,8 +83,10 @@ public class pMovement : MonoBehaviour
                 p2Health--;
                 Debug.Log("Player 2 was hit");
             }
+            
         }
     }
+   
     void playerMovement()                       //Movement Function
     {
 

@@ -7,6 +7,9 @@ TagManager:
   - playerTag
   - player1
   - player2
+  - Light Med
+  - lightMed
+  - heavyMed
   layers:
   - Default
   - TransparentFX

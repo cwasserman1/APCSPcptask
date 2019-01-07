@@ -11,7 +11,7 @@ public class p2Movement : MonoBehaviour
     public float YMin;
     public float YMax;
     public Text p1Text;
-   private int p1Health;
+   public int p1Health;
     public Rigidbody rb;
     public float speed;
     public Scene currentscene;
@@ -19,33 +19,29 @@ public class p2Movement : MonoBehaviour
     void Start() //Initiates the Vairables...Only runs at the Start of the Game
     {
         
-        p1Health = 10;                        //Makes Player 1's Health 10
+        p1Health = 5;                        //Makes Player 1's Health 10
         rb.useGravity = false;   //disables Gravity on the RigidBody
         rb.drag = 1;        //Sets Drag to 1
         rb.isKinematic = false;  //Disables kinematic movement
         
 
     }
-
-    
-    void FixedUpdate()           //Main Function that updates every frams
-
+    private void OnTriggerEnter(Collider other)//Checks for the Collision with a Trigger
     {
-        
-        p1Text.text = "P1 Health = " + p1Health.ToString ();//Makes the text on the UI display player 1's health 
-        
-        currentscene = SceneManager.GetActiveScene();           //Only allows pLayer to move on the BattleScreen
-        if (currentscene.name == "BattleScreen")
+        GameObject Maleplayer= GameObject.Find("Maleplayer");
+        pMovement script = Maleplayer.GetComponent<pMovement>();
+        if (other.gameObject.tag == "lightMed")//if the tag of the collision is "lightMed", the player will gain one health and the lightMed will be destroyed
         {
-            playerMovement();
-
-
+            script.p2Health++;
+            Destroy(other.gameObject);
         }
-        if (p1Health == 0) { SceneManager.LoadScene("P2Win"); }   //Switches to win screen upon game end
-       
-      
-
+        if (other.gameObject.tag == "heavyMed")  //if the tag of the collision is "heavyMed", the player will gain two health and the heavyMed will be destroyed
+        {
+            script.p2Health = script.p2Health + 2;
+            Destroy(other.gameObject);
+        }
     }
+
     public void OnCollisionEnter(Collision collision)   //Checks for Collision
     {
         Debug.Log("collision detected on player 2");
@@ -57,6 +53,25 @@ public class p2Movement : MonoBehaviour
             }
         }
     }
+
+    void FixedUpdate()           //Main Function that updates every frams
+
+    {
+
+        p1Text.text = "P1 Health = " + p1Health.ToString();//Makes the text on the UI display player 1's health 
+
+        currentscene = SceneManager.GetActiveScene();           //Only allows pLayer to move on the BattleScreen
+        if (currentscene.name == "BattleScreen")
+        {
+            playerMovement();
+
+
+        }
+        if (p1Health == 0) { SceneManager.LoadScene("P2Win"); }   //Switches to win screen upon game end
+
+
+
+    }
     void playerMovement()       //Movement Function
     {
 
@@ -65,6 +80,7 @@ public class p2Movement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * speed * Time.deltaTime,ForceMode.VelocityChange);              //Moves player up
         }
+        
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.AddForce(Vector3.left * speed * Time.deltaTime, ForceMode.VelocityChange);              //Moves player left

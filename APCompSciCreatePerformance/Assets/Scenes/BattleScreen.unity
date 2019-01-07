@@ -491,7 +491,7 @@ MonoBehaviour:
     type: 3}
   heavyMed: {fileID: 2426699055769267946, guid: d5d7135d70cfaf946b80eea7eec9975f,
     type: 3}
-  delay: 5
+  delay: 10
   typeofMed: 0
 --- !u!4 &384874648
 Transform:
